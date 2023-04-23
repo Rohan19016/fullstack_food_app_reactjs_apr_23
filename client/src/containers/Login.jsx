@@ -6,8 +6,9 @@ import {motion} from "framer-motion"
 import { buttonClcik } from '../animations'
 import { FcGoogle } from 'react-icons/fc'
 import {app} from "../config/firebase.config"
-import {getAuth, signInWithPopup, GoogleAuthProvider, createUserWithEmailAndPassword} from "firebase/auth"
+import {getAuth, signInWithPopup, GoogleAuthProvider, createUserWithEmailAndPassword, signInWithEmailAndPassword} from "firebase/auth"
 import { validateUserJWTToken } from '../api'
+import {useNavigate} from "react-router-dom"
 
 
 const Login = () => {
@@ -19,6 +20,7 @@ const Login = () => {
 
     const firebaseAuth = getAuth(app);
     const provider = new GoogleAuthProvider();
+    const navigate = useNavigate()
 
     const LoginWithGoogle = async () =>{
         await signInWithPopup(firebaseAuth, provider).then((userCred) => {
@@ -28,6 +30,7 @@ const Login = () => {
                         validateUserJWTToken(token).then((data) => {
                             console.log(data);
                         });
+                        navigate("/",{replace : true});
                     });
                 };
             });
@@ -49,6 +52,8 @@ const Login = () => {
                             
                             console.log(data);
                         });  
+                        navigate("/",{replace : true})
+
                     });
                 };
             });
@@ -59,6 +64,28 @@ const Login = () => {
         }
     }
  };
+
+ const signInWithEmailPass = async () =>{
+    if(userEmail !== "" && password !== ""){
+        await signInWithEmailAndPassword (firebaseAuth, userEmail, password).then(userCred=>{
+            firebaseAuth.onAuthStateChanged((cred) => {
+                if(cred){
+                    cred.getIdToken().then((token) =>{
+                        validateUserJWTToken(token).then((data) => {
+                            
+                            console.log(data);
+                        }); 
+                        navigate("/",{replace : true})
+ 
+                    });
+                };
+            }); 
+        })
+    }else{
+         //alert message
+
+    }
+ }
 
   return (
     <div className='w-screen h-screen relative overflow-hidden flex'>
@@ -113,7 +140,9 @@ const Login = () => {
                 >
                 Sign Up
             </motion.button> ) : (
-                <motion.button {...buttonClcik} className='w-full px-4 py-2 rounded-md bg-red-400 cursor-pointer text-white text-xl capitalize hover:bg-red-500 transition-all duration-150'>
+                <motion.button {...buttonClcik}
+                onClick={signInWithEmailPass}
+                className='w-full px-4 py-2 rounded-md bg-red-400 cursor-pointer text-white text-xl capitalize hover:bg-red-500 transition-all duration-150'>
                 Dig in
             </motion.button>
             )}
