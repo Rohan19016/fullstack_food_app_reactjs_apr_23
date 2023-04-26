@@ -143,7 +143,7 @@ const Login = () => {
                 <motion.button {...buttonClcik}
                 onClick={signInWithEmailPass}
                 className='w-full px-4 py-2 rounded-md bg-red-400 cursor-pointer text-white text-xl capitalize hover:bg-red-500 transition-all duration-150'>
-                Dig in
+                Sign In
             </motion.button>
             )}
         </div>
