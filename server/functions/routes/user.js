@@ -19,7 +19,7 @@ router.get("/jwtVerification", async (req, res) => {
         return res.status(200).json({success: true, data: decodedValue })
      }
      catch(err){
-        return res.send({success : false, msg : `error in extracting the token : ${err}`, });
+        return res.send({success : false, msg : `Error in extracting the token : ${err}`, });
      }
 });
 
