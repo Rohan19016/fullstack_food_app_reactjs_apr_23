@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { getAllProducts } from "../api";
 import { setAllProducts } from "../context/actions/productActions";
 
-function DBHome() {
+const DBHome = () => {
   const products = useSelector((state) => state.products);
   const dispatch = useDispatch();
   useEffect(() => {
@@ -15,6 +15,6 @@ function DBHome() {
   }, []);
 
   return <div>DBHome</div>;
-}
+};
 
 export default DBHome;

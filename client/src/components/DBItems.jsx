@@ -1,10 +1,25 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { DataTable } from "../components";
 import { HiCurrencyRupee } from "../assets/icons";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { setAllProducts } from "../context/actions/productActions";
+import { getAllProducts } from "../api";
 
 export const DBItems = () => {
   const products = useSelector((state) => state.products);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    if (!products) {
+      getAllProducts().then((data) => {
+        dispatch(setAllProducts(data));
+      });
+    }
+  }, [products]);
+
+  if (!products) {
+    return <div>Loading....</div>;
+  }
+
   return (
     <div className="flex items-center justify-self-center gap-4 pt-6 w-full">
       <DataTable
@@ -31,49 +46,27 @@ export const DBItems = () => {
             title: "Price",
             field: "product_price",
             render: (rowData) => (
-              <p className="text-2xl font-semibold text-textColor flex items-center justify-center">
+              <p className="text-2xl font-semibold text-textColor flex items-center ">
                 <HiCurrencyRupee className="text-red-400" />
                 {parseFloat(rowData.product_price).toFixed(2)}
               </p>
             ),
           },
         ]}
-        data={(query) =>
-          new Promise((resolve, reject) => {
-            let url =
-              "http://localhost:5001/full-stack-order/us-central1/app/api/products/all?";
-            url += "per_page=" + query.pageSize;
-            url += "&pages=" + (query.page + 1);
-
-            fetch(url)
-              .then((response) => response.json())
-              .then((result) => {
-                resolve({
-                  data: result.data,
-                  page: result.pageSize - 1,
-                  totalCount: result.total,
-                });
-                console.log();
-              });
-          })
-        }
+        data={products}
         title="List of Products"
         actions={[
           {
             icon: "edit",
-            tooltip: "Edit Data",
+            tooltip: "Edit Item",
             onClick: (event, rowData) =>
-              alert("You saved " + rowData.productId),
+              alert("You clicked edit!" + rowData.productId),
           },
           {
             icon: "delete",
-            tooltip: "Delete Data",
-            onCLick: (event, rowData) => {
-              let isExecuted = window.confirm(
-                "Are you sure, you want to perform this aciton"
-              );
-              console.log(isExecuted);
-            },
+            tooltip: "Delete Item",
+            onClick: (event, rowData) =>
+              alert("You clicked delete!" + rowData.productId),
           },
         ]}
       />
