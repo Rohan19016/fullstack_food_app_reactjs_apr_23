@@ -14,53 +14,59 @@ export const statuses = [
   { id: 7, title: "Bread", category: "bread" },
 ];
 
-// export const randomData = [
-//   {
-//     id: 1,
-//     imageURL:
-//       "https://firebasestorage.googleapis.com/v0/b/food-app-nov-22.appspot.com/o/Pictures%2F1674704862591_dessert2.png?alt=media&token=7c001521-f0ac-40a8-b07a-42dc4aab444a",
-//     product_name: "Iceream",
-//     product_category: "Chocolate & vanilla",
-//     product_price: "23.00",
-//   },
-//   {
-//     id: 2,
-//     imageURL:
-//       "https://firebasestorage.googleapis.com/v0/b/food-app-nov-22.appspot.com/o/Pictures%2F1674797445483_f1.png?alt=media&token=8b46c1ce-9600-4f9a-8ff7-3518b1bf6db3",
-//     product_name: "Strawberries",
-//     product_category: "Fresh Strawberries",
-//     product_price: "18.00",
-//   },
-//   {
-//     id: 3,
-//     imageURL:
-//       "https://firebasestorage.googleapis.com/v0/b/food-app-nov-22.appspot.com/o/Pictures%2F1674797463817_f2.png?alt=media&token=69ab9301-ef04-4690-bc68-e537cdc1985e",
-//     product_name: "Pine Apple",
-//     product_category: "Juicy Apples",
-//     product_price: "16.00",
-//   },
-//   {
-//     id: 4,
-//     imageURL:
-//       "https://firebasestorage.googleapis.com/v0/b/food-app-nov-22.appspot.com/o/Pictures%2F1674797033037_c3.png?alt=media&token=7644719f-95ae-42f2-8227-3fb843faa567",
-//     product_name: "Chicken Kebab",
-//     product_category: "Mixed Kebab Plate",
-//     product_price: "22.0",
-//   },
-//   {
-//     id: 5,
-//     imageURL:
-//       "https://firebasestorage.googleapis.com/v0/b/food-app-nov-22.appspot.com/o/Pictures%2F1674797376326_d4.png?alt=media&token=7d37b12c-f3a8-4561-974e-de6574ddfea6",
-//     product_name: "Mojito",
-//     product_category: "Cocktail Drinks",
-//     product_price: "10.0",
-//   },
-//   {
-//     id: 6,
-//     imageURL:
-//       "https://firebasestorage.googleapis.com/v0/b/food-app-nov-22.appspot.com/o/Pictures%2F1674797198643_cu3.png?alt=media&token=e630d851-91aa-4135-a241-0ab961a7c4ee",
-//     product_name: "Prawn Masala",
-//     product_category: "Spicy Masala",
-//     product_price: "20.0",
-//   },
-// ];
+export const randomData = [
+  {
+    id: 1,
+    imageURL:
+      "https://firebasestorage.googleapis.com/v0/b/full-stack-order.appspot.com/o/images%2F1683049466128_d1.png?alt=media&token=f99cc29b-3923-438d-bb22-17ee4cfe7c17",
+    productId: 1683049479048,
+    product_category: "energy drinks",
+    product_name: "Red Bull",
+    product_price: "15",
+  },
+  {
+    id: 2,
+    imageURL:
+      "https://firebasestorage.googleapis.com/v0/b/full-stack-order.appspot.com/o/images%2F1683049432662_d2.png?alt=media&token=2510db69-d9bd-4b3a-8ab2-b6539e9fdc37",
+    productId: 1683049449619,
+    product_category: "cocktail & drinks",
+    product_name: "Pepsi",
+    product_price: "45",
+  },
+  {
+    id: 3,
+    imageURL:
+      "https://firebasestorage.googleapis.com/v0/b/full-stack-order.appspot.com/o/images%2F1683049396555_f2.png?alt=media&token=19fc05a6-794c-4ff1-8b88-af966f28cfaa",
+    productId: 1683049410518,
+    product_category: "fruits",
+    product_name: "Pine Apple",
+    product_price: "30",
+  },
+  {
+    id: 4,
+    imageURL:
+      "https://firebasestorage.googleapis.com/v0/b/full-stack-order.appspot.com/o/images%2F1683049374802_f1.png?alt=media&token=38504e12-80a1-462a-9a7b-d364616c7f90",
+    productId: 1683049388360,
+    product_category: "fruits",
+    product_name: "Strawberries",
+    product_price: "50",
+  },
+  {
+    id: 5,
+    imageURL:
+      "https://firebasestorage.googleapis.com/v0/b/full-stack-order.appspot.com/o/images%2F1683049340491_c3.png?alt=media&token=f1aa36cf-6e18-48fc-a1fc-e6ac4bb32ba8",
+    productId: 1683049363891,
+    product_category: "mixed kabad plate",
+    product_name: "Chicken Kebab",
+    product_price: "33",
+  },
+  {
+    id: 6,
+    imageURL:
+      "https://firebasestorage.googleapis.com/v0/b/full-stack-order.appspot.com/o/images%2F1683049320139_i4.png?alt=media&token=7a5bc77f-b92d-45b3-a181-5b517d203fd2",
+    productId: 1683049332061,
+    product_category: "deserts",
+    product_name: "Ice Cream",
+    product_price: "25",
+  },
+];
