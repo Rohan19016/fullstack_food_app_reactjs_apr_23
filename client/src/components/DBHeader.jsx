@@ -32,7 +32,7 @@ function DBHeader() {
   return (
     <div className="w-full flex items-center justify-between gap-3">
       <p className="text-2xl text-headingColor">
-        Welcom to FoodKart
+        Welcome to FoodKart
         {user?.name && (
           <span className="block text-base text-gray-500">{`Hello ${user?.name}...!`}</span>
         )}
