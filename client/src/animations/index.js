@@ -23,3 +23,9 @@ export const staggerFadeInOut = (i) => {
     key: { i },
   };
 };
+
+export const slideIn = {
+  initial: { opacity: 0, x: 30 },
+  animate: { opacity: 1, x: 0 },
+  exit: { opacity: 0, x: 30 },
+};
