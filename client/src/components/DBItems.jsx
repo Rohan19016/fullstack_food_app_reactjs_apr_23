@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { DataTable } from "../components";
+import { DataTable, MainLoader } from "../components";
 import { HiCurrencyRupee } from "../assets/icons";
 import { useDispatch, useSelector } from "react-redux";
 import {
@@ -23,8 +23,8 @@ export const DBItems = () => {
 
   if (!products) {
     return (
-      <div className="flex items-center justify-center flex col pt-6 w-full h-full">
-        Loading...
+      <div className="flex items-center justify-center  col pt-6 w-full h-full">
+        <MainLoader />
       </div>
     );
   }

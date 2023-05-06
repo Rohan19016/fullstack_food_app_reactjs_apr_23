@@ -14,4 +14,7 @@ export { default as DBUsers } from "./DBUsers";
 export { default as DataTable } from "./DataTable";
 export { default as Spinner } from "./Spinner";
 export { default as Home } from "./Home";
-
+export { default as HomeSLider } from "./HomeSLider";
+export { default as FilterSection } from "./FilterSection";
+export { default as SLider } from "./SLider";
+export { default as SliderCard } from "./SliderCard";

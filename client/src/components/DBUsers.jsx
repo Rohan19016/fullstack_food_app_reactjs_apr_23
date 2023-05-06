@@ -4,6 +4,7 @@ import { getAllUsers } from "../api";
 import { setAllUserDetails } from "../context/actions/allUsersAction";
 import DataTable from "./DataTable";
 import { Avatar } from "../assets";
+import MainLoader from "./MainLoader";
 
 const DBUsers = () => {
   const allUsers = useSelector((state) => state.allUsers);
@@ -19,7 +20,11 @@ const DBUsers = () => {
   }, [allUsers]);
 
   if (!allUsers) {
-    return <div>Loading...</div>;
+    return (
+      <div>
+        <MainLoader />
+      </div>
+    );
   }
 
   return (
