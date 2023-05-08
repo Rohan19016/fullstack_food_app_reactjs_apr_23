@@ -3,7 +3,7 @@ import { Logo, cheesecake } from "../assets";
 import { LoginInput } from "../components";
 import { FaEnvelope, FaLock } from "react-icons/fa";
 import { motion } from "framer-motion";
-import { buttonClcik } from "../animations";
+import { buttonClick } from "../animations";
 import { FcGoogle } from "react-icons/fc";
 import { app } from "../config/firebase.config";
 import {
@@ -162,7 +162,7 @@ const Login = () => {
             <p>
               Don't have an account:{" "}
               <motion.button
-                {...buttonClcik}
+                {...buttonClick}
                 className="text-red-400 underline cursor-pointer bg-transparent"
                 onClick={() => setIsSignup(true)}
               >
@@ -173,7 +173,7 @@ const Login = () => {
             <p>
               Already have an account:{" "}
               <motion.button
-                {...buttonClcik}
+                {...buttonClick}
                 className="text-red-400 underline cursor-pointer bg-transparent"
                 onClick={() => setIsSignup(false)}
               >
@@ -185,7 +185,7 @@ const Login = () => {
           {/*sign in button section*/}
           {isSignup ? (
             <motion.button
-              {...buttonClcik}
+              {...buttonClick}
               className="w-full px-4 py-2 rounded-md bg-red-400 cursor-pointer text-white text-xl capitalize hover:bg-red-500 transition-all duration-150"
               on
               onClick={signUpWithEmailPass}
@@ -194,7 +194,7 @@ const Login = () => {
             </motion.button>
           ) : (
             <motion.button
-              {...buttonClcik}
+              {...buttonClick}
               onClick={signInWithEmailPass}
               className="w-full px-4 py-2 rounded-md bg-red-400 cursor-pointer text-white text-xl capitalize hover:bg-red-500 transition-all duration-150"
             >
@@ -211,7 +211,7 @@ const Login = () => {
         </div>
         {/*sign in google*/}
         <motion.div
-          {...buttonClcik}
+          {...buttonClick}
           className="flex items-center justify-center px-20 py-2 bg-lightOverlay backdrop-blur-md cursor-pointer rounded-3xl"
           onClick={LoginWithGoogle}
         >

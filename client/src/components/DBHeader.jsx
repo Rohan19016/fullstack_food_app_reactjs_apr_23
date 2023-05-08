@@ -6,7 +6,7 @@ import {
   MdSearch,
 } from "../assets/icons";
 import { useDispatch, useSelector } from "react-redux";
-import { buttonClcik } from "../animations";
+import { buttonClick } from "../animations";
 import { motion } from "framer-motion";
 import { Avatar } from "../assets";
 import { useNavigate } from "react-router-dom";
@@ -49,7 +49,7 @@ function DBHeader() {
         </div>
 
         <motion.div
-          {...buttonClcik}
+          {...buttonClick}
           className="w-10 h-10 rounded-md cursor-pointer bg-lightOverlay backdrop-blur-md shadow-md flex items-center justify-center"
         >
           <BsFillBellFill className="text-gray-400 text-xl" />
@@ -66,7 +66,7 @@ function DBHeader() {
           </div>
 
           <motion.div
-            {...buttonClcik}
+            {...buttonClick}
             onClick={signOut}
             className="w-10 h-10 rounded-md cursor-pointer bg-lightOverlay backdrop-blur-md shadow-md flex items-center justify-center"
           >

@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import React from "react";
 import { HiCurrencyRupee } from "react-icons/hi2";
-import { buttonClcik } from "../animations";
+import { buttonClick } from "../animations";
 import { IoBasket } from "react-icons/io5";
 import { useDispatch, useSelector } from "react-redux";
 import { addNewItemToCart, getAllCartItems } from "../api";
@@ -34,7 +34,7 @@ const SliderCard = ({ data, index }) => {
           {parseFloat(data.product_price).toFixed(2)}
         </p>
         <motion.div
-          {...buttonClcik}
+          {...buttonClick}
           onClick={sendToCart}
           className="w-8 h-8 rounded-full bg-red-500 flex items-center justify-center absolute -top-4 right-2 cursor-pointer"
         >

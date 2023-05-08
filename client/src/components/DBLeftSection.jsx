@@ -73,7 +73,7 @@ const DBLeftSection = () => {
           </div>
           <p className="text-xl text-primary font-semibold">Help Center</p>
           <p className="text-base text-gray-300 text-center">
-            Having trouble in FoodKart. Please contact us for mroe questions
+            Having trouble in FoodKart. Please contact us for more questions
           </p>
           <p className="px-4 py-2 rounded-full bg-primary text-red-400 cursor-pointer">
             Get in touch

@@ -19,7 +19,7 @@ import {
   alertSuccess,
 } from "../context/actions/alertActions";
 import { motion } from "framer-motion";
-import { buttonClcik } from "../animations";
+import { buttonClick } from "../animations";
 import { addNewProduct, getAllProducts } from "../api";
 import { setAllProducts } from "../context/actions/productActions";
 
@@ -192,7 +192,7 @@ const DBNewItem = () => {
                     />
 
                     <motion.button
-                      {...buttonClcik}
+                      {...buttonClick}
                       type="button"
                       className="absolute top-3 right-3 p-3 rounded-full bg-red-500 text-xl cursor-pointer outline-none hover:shadow-md duration-500 transition-all ease-in-out"
                       onClick={() => deleteImageFromFirebase(imageDownloadURL)}
@@ -207,7 +207,7 @@ const DBNewItem = () => {
         </div>
         <motion.button
           onClick={submitNewData}
-          {...buttonClcik}
+          {...buttonClick}
           className="w-9/12 p-2 rounded-md bg-red-400 text-primary hover:bg-red-500 cursor-pointer"
         >
           Save

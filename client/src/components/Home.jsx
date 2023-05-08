@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import React from "react";
 import { Delivery, HeroBg } from "../assets";
-import { buttonClcik, staggerFadeInOut } from "../animations";
+import { buttonClick, staggerFadeInOut } from "../animations";
 import { randomData } from "../utils/styles";
 
 const Home = () => {
@@ -33,7 +33,7 @@ const Home = () => {
           Necessitatibus, architecto aliquam. Ab.
         </p>
         <motion.button
-          {...buttonClcik}
+          {...buttonClick}
           className="bg-gradient-to-bl from-orange-400 to-orange-600 px-4 py-2 rounded-xl text-black text-base font-semibold"
         >
           Order Now

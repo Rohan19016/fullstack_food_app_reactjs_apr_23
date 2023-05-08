@@ -3,12 +3,13 @@ import { Link, NavLink, useNavigate } from "react-router-dom";
 import { Avatar, Logo } from "../assets";
 import { isActiveStyles, isNotActiveStyles } from "../utils/styles";
 import { motion } from "framer-motion";
-import { buttonClcik, slideTop } from "../animations";
+import { buttonClick, slideTop } from "../animations";
 import { MdLogout, MdShoppingCart } from "../assets/icons";
 import { useDispatch, useSelector } from "react-redux";
 import { getAuth } from "firebase/auth";
 import { app } from "../config/firebase.config";
 import { setUserNull } from "../context/actions/userActions";
+import { setCartOn } from "../context/actions/displayCartAction";
 
 const Header = () => {
   const user = useSelector((state) => state.user);
@@ -70,7 +71,11 @@ const Header = () => {
           </NavLink>
         </ul>
 
-        <motion.div {...buttonClcik} className="relative cursor-pointer">
+        <motion.div
+          {...buttonClick}
+          onClick={() => dispatch(setCartOn())}
+          className="relative cursor-pointer"
+        >
           <MdShoppingCart className="text-3xl text-textColor" />
           {cart?.length > 0 && (
             <div className="w-6 h-6 rounded-full bg-red-500 flex items-center justify-center absolute -top-4 -right-1">
@@ -121,7 +126,7 @@ const Header = () => {
                   </Link>
                   <hr />
                   <motion.div
-                    {...buttonClcik}
+                    {...buttonClick}
                     onClick={signOut}
                     className="group flex items-center justify-center px-3 py-2 rounded-md shadow-md bg-gray-100 hover:bg-gray-200 gap-3"
                   >
@@ -138,7 +143,7 @@ const Header = () => {
           <>
             <NavLink to={"/login"}>
               <motion.button
-                {...buttonClcik}
+                {...buttonClick}
                 className="px-4 py-2 rounded-md shadow-md bg-lightOverlay border border-red-300 cursor-pointer"
               >
                 Login

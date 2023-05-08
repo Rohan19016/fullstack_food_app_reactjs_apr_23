@@ -1,4 +1,4 @@
-export const buttonClcik = {
+export const buttonClick = {
   whileTap: { scale: 0.95 },
 };
 
@@ -22,4 +22,10 @@ export const staggerFadeInOut = (i) => {
     transition: { duration: 0.3, delay: i * 0.15 },
     key: { i },
   };
+};
+
+export const slideIn = {
+  initial: { opacity: 0, x: 30 },
+  animate: { opacity: 1, x: 0 },
+  exit: { opacity: 0, x: 30 },
 };
